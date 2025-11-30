@@ -1,0 +1,5 @@
+langchain
+streamlit
+langchain-community
+azure-ai-documentintelligence
+dotenv
