@@ -1,2 +1,4 @@
 .env
 /archivos_subidos
+.gitignore
+.streamlit/secrets.toml

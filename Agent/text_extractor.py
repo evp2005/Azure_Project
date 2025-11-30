@@ -1,19 +1,19 @@
-from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
 
-load_dotenv()
-key = os.getenv("API_KEY")
-endpoint = os.getenv("API_ENDPOINT")
-
-def extract_text(image_path: str):
+def extract_text(image_path: str, key: str, endpoint: str):
     loader = AzureAIDocumentIntelligenceLoader(
         file_path=image_path,
         api_key=key,
         api_endpoint=endpoint
     )
+    print("Loader creado, credenciales validas")
+    print("=======================================")
     documents = loader.load()
     doc = documents[0].page_content
+    print("Texto Extraido")
+    print("=======================================")
     return str(doc)
      
 
